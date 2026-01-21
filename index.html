@@ -7,7 +7,7 @@
   <meta name="description" content="AI-powered side hustle finder. Discover your perfect income stream based on your skills, time, and goals. Free personalized action plan in 60 seconds.">
   <meta property="og:title" content="Side Hustle Copilot - Find Your $1K/Month Side Income">
   <meta property="og:description" content="I just found my perfect side hustle! Take the free 60-second quiz.">
-  <meta property="og:image" content="https://sidehustle.dubltap.io/og-image.png">
+  <meta property="og:image" content="https://hustle.dubltap.io/og-image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,21 +15,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /*
-     * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     * ═══════════════════════════════════════════════════════════════
      * SIDE HUSTLE COPILOT - GOLDEN RATIO DESIGN SYSTEM
-     * Ï† (Phi) = 1.618033988749895
+     * φ (Phi) = 1.618033988749895
      * 
      * "Riffs Louder Than Hunger" - Helping everyday people build income
-     * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     * ═══════════════════════════════════════════════════════════════
      */
     
     :root {
-      /* â•â• GOLDEN RATIO CONSTANTS â•â• */
+      /* ══ GOLDEN RATIO CONSTANTS ══ */
       --phi: 1.618033988749895;
       --phi-inv: 0.618033988749895;
       --phi-sq: 2.618033988749895;
       
-      /* â•â• GOLDEN TYPOGRAPHY SCALE â•â• */
+      /* ══ GOLDEN TYPOGRAPHY SCALE ══ */
       --text-xs: 10px;
       --text-sm: 13px;
       --text-base: 16px;
@@ -41,7 +41,7 @@
       --text-5xl: 68px;
       --text-6xl: 89px;
       
-      /* â•â• FIBONACCI SPACING â•â• */
+      /* ══ FIBONACCI SPACING ══ */
       --space-3xs: 3px;
       --space-2xs: 5px;
       --space-xs: 8px;
@@ -52,18 +52,18 @@
       --space-2xl: 89px;
       --space-3xl: 144px;
       
-      /* â•â• GOLDEN TIMING â•â• */
+      /* ══ GOLDEN TIMING ══ */
       --duration-fast: 162ms;
       --duration-base: 262ms;
       --duration-slow: 424ms;
       --duration-slower: 686ms;
       
-      /* â•â• GOLDEN EASING â•â• */
+      /* ══ GOLDEN EASING ══ */
       --ease-golden: cubic-bezier(0.382, 0, 0.618, 1);
       --ease-golden-out: cubic-bezier(0, 0.618, 0.382, 1);
       --ease-golden-bounce: cubic-bezier(0.382, 1.618, 0.618, 1);
       
-      /* â•â• MONEY COLORS (Green/Gold theme) â•â• */
+      /* ══ MONEY COLORS (Green/Gold theme) ══ */
       --bg-dark: #0a0f0a;
       --bg-card: #111a11;
       --bg-elevated: #1a2a1a;
@@ -78,19 +78,19 @@
       --text-secondary: #bbf7d0;
       --text-muted: #86efac;
       
-      /* â•â• GRADIENTS â•â• */
+      /* ══ GRADIENTS ══ */
       --gradient-money: linear-gradient(137.5deg, var(--green-500), var(--gold-500));
       --gradient-dark: linear-gradient(137.5deg, var(--bg-dark), var(--bg-card), #0f1a0f);
       --gradient-glow: radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15), transparent 70%);
       
-      /* â•â• SHADOWS â•â• */
+      /* ══ SHADOWS ══ */
       --shadow-sm: 0 2px 5px rgba(0,0,0,0.2);
       --shadow-md: 0 5px 13px rgba(0,0,0,0.25);
       --shadow-lg: 0 13px 34px rgba(0,0,0,0.3);
       --shadow-xl: 0 21px 55px rgba(0,0,0,0.35);
       --shadow-glow: 0 0 34px rgba(34, 197, 94, 0.3);
       
-      /* â•â• RADIUS â•â• */
+      /* ══ RADIUS ══ */
       --radius-sm: 5px;
       --radius-md: 8px;
       --radius-lg: 13px;
@@ -112,7 +112,7 @@
       overflow-x: hidden;
     }
     
-    /* â•â• CONTAINER â•â• */
+    /* ══ CONTAINER ══ */
     .container {
       max-width: 610px; /* Fibonacci */
       margin: 0 auto;
@@ -121,7 +121,7 @@
       z-index: 1;
     }
     
-    /* â•â• ANIMATED BACKGROUND â•â• */
+    /* ══ ANIMATED BACKGROUND ══ */
     .bg-effects {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -160,7 +160,7 @@
     .glow-orb:nth-child(1) { top: -10%; left: -10%; }
     .glow-orb:nth-child(2) { bottom: -10%; right: -10%; animation-delay: 1.618s; }
     
-    /* â•â• ANNOUNCEMENT BAR â•â• */
+    /* ══ ANNOUNCEMENT BAR ══ */
     .announcement-bar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -182,7 +182,7 @@
       padding-top: 42px;
     }
     
-    /* â•â• HEADER â•â• */
+    /* ══ HEADER ══ */
     header {
       text-align: center;
       margin-bottom: var(--space-xl);
@@ -231,7 +231,7 @@
       font-weight: 400;
     }
     
-    /* â•â• SOCIAL PROOF â•â• */
+    /* ══ SOCIAL PROOF ══ */
     .social-proof {
       display: flex;
       align-items: center;
@@ -275,7 +275,7 @@
       color: var(--green-400);
     }
     
-    /* â•â• STAGE CONTAINERS â•â• */
+    /* ══ STAGE CONTAINERS ══ */
     .stage {
       display: none;
       animation: fadeUp var(--duration-slow) var(--ease-golden-out);
@@ -283,7 +283,7 @@
     
     .stage.active { display: block; }
     
-    /* â•â• QUIZ CARD â•â• */
+    /* ══ QUIZ CARD ══ */
     .quiz-card {
       background: var(--bg-card);
       border: 1px solid rgba(74, 222, 128, 0.1);
@@ -337,7 +337,7 @@
       line-height: 1.3;
     }
     
-    /* â•â• ANSWER OPTIONS â•â• */
+    /* ══ ANSWER OPTIONS ══ */
     .options-grid {
       display: grid;
       gap: var(--space-sm);
@@ -389,7 +389,7 @@
       margin-top: 2px;
     }
     
-    /* â•â• SLIDER INPUT â•â• */
+    /* ══ SLIDER INPUT ══ */
     .slider-container {
       margin-bottom: var(--space-lg);
     }
@@ -446,7 +446,7 @@
       color: var(--text-muted);
     }
     
-    /* â•â• NAVIGATION BUTTONS â•â• */
+    /* ══ NAVIGATION BUTTONS ══ */
     .nav-row {
       display: flex;
       gap: var(--space-sm);
@@ -491,7 +491,7 @@
       border-color: rgba(255,255,255,0.3);
     }
     
-    /* â•â• LOADING â•â• */
+    /* ══ LOADING ══ */
     .loading-container {
       text-align: center;
       padding: var(--space-2xl) 0;
@@ -560,7 +560,7 @@
       color: #000;
     }
     
-    /* â•â• RESULTS â•â• */
+    /* ══ RESULTS ══ */
     .results-header {
       text-align: center;
       margin-bottom: var(--space-xl);
@@ -587,7 +587,7 @@
       color: var(--text-muted);
     }
     
-    /* â•â• HUSTLE CARD â•â• */
+    /* ══ HUSTLE CARD ══ */
     .hustle-card {
       background: var(--bg-card);
       border: 1px solid rgba(74, 222, 128, 0.15);
@@ -610,7 +610,7 @@
     }
     
     .hustle-card.featured::before {
-      content: 'ðŸ† TOP MATCH';
+      content: '🏆 TOP MATCH';
       position: absolute;
       top: var(--space-sm);
       right: var(--space-sm);
@@ -692,7 +692,7 @@
       color: var(--green-400);
     }
     
-    /* â•â• ACTION PLAN â•â• */
+    /* ══ ACTION PLAN ══ */
     .action-plan {
       background: var(--bg-card);
       border: 1px solid rgba(74, 222, 128, 0.1);
@@ -749,7 +749,7 @@
       color: var(--text-muted);
     }
     
-    /* â•â• SHARE CARD â•â• */
+    /* ══ SHARE CARD ══ */
     .share-card {
       background: linear-gradient(137.5deg, rgba(34, 197, 94, 0.1), rgba(245, 158, 11, 0.1));
       border: 2px solid var(--green-500);
@@ -797,7 +797,7 @@
     .share-btn.linkedin { background: #0a66c2; color: white; }
     .share-btn.copy { background: white; color: #000; }
     
-    /* â•â• REFERRAL CARD â•â• */
+    /* ══ REFERRAL CARD ══ */
     .referral-card {
       background: linear-gradient(137.5deg, #fef3c7, #fde68a);
       border-radius: var(--radius-2xl);
@@ -867,7 +867,7 @@
       cursor: pointer;
     }
     
-    /* â•â• CTA SECTION â•â• */
+    /* ══ CTA SECTION ══ */
     .cta-section {
       background: var(--bg-card);
       border: 1px solid rgba(74, 222, 128, 0.1);
@@ -904,12 +904,12 @@
     }
     
     .cta-feature::before {
-      content: 'âœ“';
+      content: '✓';
       color: var(--green-400);
       font-weight: bold;
     }
     
-    /* â•â• MODALS â•â• */
+    /* ══ MODALS ══ */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -1006,7 +1006,7 @@
     }
     
     .modal-benefits li::before {
-      content: 'âœ“';
+      content: '✓';
       color: var(--green-400);
       font-weight: bold;
     }
@@ -1022,7 +1022,7 @@
       color: var(--green-400);
     }
     
-    /* â•â• TOAST â•â• */
+    /* ══ TOAST ══ */
     .toast {
       position: fixed;
       bottom: var(--space-lg);
@@ -1045,7 +1045,7 @@
       transform: translateX(-50%) translateY(0);
     }
     
-    /* â•â• FOOTER â•â• */
+    /* ══ FOOTER ══ */
     .footer {
       text-align: center;
       padding: var(--space-lg) 0;
@@ -1064,28 +1064,28 @@
 <body class="has-announcement">
   <!-- Announcement Bar -->
   <div class="announcement-bar" onclick="showUpgradeModal()">
-    ðŸ”¥ <span id="liveCount">2,847</span> people found their side hustle today â€” <strong>Get your free plan â†’</strong>
+    🔥 <span id="liveCount">2,847</span> people found their side hustle today — <strong>Get your free plan →</strong>
   </div>
   
   <!-- Background Effects -->
   <div class="bg-effects">
     <div class="glow-orb"></div>
     <div class="glow-orb"></div>
-    <div class="money-particle" style="top: 10%; left: 5%;">ðŸ’°</div>
-    <div class="money-particle" style="top: 30%; right: 10%; animation-delay: 1s;">ðŸ’µ</div>
-    <div class="money-particle" style="bottom: 20%; left: 15%; animation-delay: 2s;">ðŸš€</div>
-    <div class="money-particle" style="bottom: 40%; right: 5%; animation-delay: 0.5s;">ðŸ’Ž</div>
+    <div class="money-particle" style="top: 10%; left: 5%;">💰</div>
+    <div class="money-particle" style="top: 30%; right: 10%; animation-delay: 1s;">💵</div>
+    <div class="money-particle" style="bottom: 20%; left: 15%; animation-delay: 2s;">🚀</div>
+    <div class="money-particle" style="bottom: 40%; right: 5%; animation-delay: 0.5s;">💎</div>
   </div>
   
   <div class="container">
     <!-- Header -->
     <header>
       <div class="logo">
-        <span class="logo-icon">ðŸš€</span>
+        <span class="logo-icon">🚀</span>
         Side Hustle Copilot
       </div>
       <h1>Find Your <span class="highlight">$1K/Month</span> Side Income</h1>
-      <p class="subtitle">60-second quiz â†’ Personalized action plan â†’ Start earning</p>
+      <p class="subtitle">60-second quiz → Personalized action plan → Start earning</p>
       
       <div class="social-proof">
         <div class="proof-item">
@@ -1098,7 +1098,7 @@
           <span><span class="proof-number" id="totalUsers">47,293</span> plans created</span>
         </div>
         <div class="proof-item">
-          ðŸ’° <span class="proof-number">$2.4M</span> earned by users
+          💰 <span class="proof-number">$2.4M</span> earned by users
         </div>
       </div>
     </header>
@@ -1122,8 +1122,8 @@
           </div>
         </div>
         <div class="nav-row">
-          <button class="btn btn-secondary hidden" id="backBtn" onclick="prevQuestion()">â† Back</button>
-          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Continue â†’</button>
+          <button class="btn btn-secondary hidden" id="backBtn" onclick="prevQuestion()">← Back</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Continue →</button>
         </div>
       </div>
     </div>
@@ -1132,23 +1132,23 @@
     <div class="stage" id="loadingStage">
       <div class="quiz-card">
         <div class="loading-container">
-          <div class="loading-icon">ðŸ”</div>
+          <div class="loading-icon">🔍</div>
           <p class="loading-text">Analyzing your profile...</p>
           <div class="loading-steps">
             <div class="loading-step" id="loadStep1">
-              <div class="step-check">âœ“</div>
+              <div class="step-check">✓</div>
               <span>Matching skills to opportunities</span>
             </div>
             <div class="loading-step" id="loadStep2">
-              <div class="step-check">âœ“</div>
+              <div class="step-check">✓</div>
               <span>Calculating income potential</span>
             </div>
             <div class="loading-step" id="loadStep3">
-              <div class="step-check">âœ“</div>
+              <div class="step-check">✓</div>
               <span>Building your action plan</span>
             </div>
             <div class="loading-step" id="loadStep4">
-              <div class="step-check">âœ“</div>
+              <div class="step-check">✓</div>
               <span>Finding quick wins</span>
             </div>
           </div>
@@ -1160,7 +1160,7 @@
     <div class="stage" id="resultsStage">
       <!-- Results Header -->
       <div class="results-header">
-        <h2>ðŸŽ¯ Your Perfect Side Hustle</h2>
+        <h2>🎯 Your Perfect Side Hustle</h2>
         <div class="income-projection" id="incomeProjection">$1,500/mo</div>
         <div class="income-label">Projected monthly income potential</div>
       </div>
@@ -1170,7 +1170,7 @@
       
       <!-- Action Plan -->
       <div class="action-plan" id="actionPlan">
-        <div class="plan-title">ðŸ“‹ Your 7-Day Quick Start Plan</div>
+        <div class="plan-title">📋 Your 7-Day Quick Start Plan</div>
         <div class="plan-steps" id="planSteps"></div>
       </div>
       
@@ -1179,18 +1179,18 @@
       
       <!-- Share Card -->
       <div class="share-card" id="shareCard">
-        <h3>ðŸ”“ Share to Unlock Premium Features</h3>
+        <h3>🔓 Share to Unlock Premium Features</h3>
         <p>Get detailed playbooks, income calculators, and weekly coaching tips!</p>
         <div class="share-buttons">
-          <button class="share-btn twitter" onclick="shareTwitter()">ð• Share Result</button>
-          <button class="share-btn linkedin" onclick="shareLinkedIn()">ðŸ’¼ LinkedIn</button>
-          <button class="share-btn copy" onclick="copyShareLink()">ðŸ”— Copy Link</button>
+          <button class="share-btn twitter" onclick="shareTwitter()">𝕏 Share Result</button>
+          <button class="share-btn linkedin" onclick="shareLinkedIn()">💼 LinkedIn</button>
+          <button class="share-btn copy" onclick="copyShareLink()">🔗 Copy Link</button>
         </div>
       </div>
       
       <!-- Referral Card -->
       <div class="referral-card">
-        <h3>ðŸŽ Give 3, Get Pro Free</h3>
+        <h3>🎁 Give 3, Get Pro Free</h3>
         <p>Help 3 friends find their side hustle and unlock all premium features!</p>
         <div class="referral-progress">
           <div class="referral-dot" id="ref1">1</div>
@@ -1205,7 +1205,7 @@
       
       <!-- CTA Section -->
       <div class="cta-section">
-        <h3>ðŸš€ Ready to Start Earning?</h3>
+        <h3>🚀 Ready to Start Earning?</h3>
         <p>Get the complete playbook with step-by-step instructions</p>
         <div class="cta-features">
           <div class="cta-feature">Detailed tutorials</div>
@@ -1214,17 +1214,17 @@
           <div class="cta-feature">Community access</div>
         </div>
         <button class="btn btn-primary" style="width: 100%" onclick="showUpgradeModal()">
-          Unlock Full Playbook â€” $4.99/mo
+          Unlock Full Playbook — $4.99/mo
         </button>
       </div>
       
       <!-- Reset -->
       <button class="btn btn-secondary" style="width: 100%; margin-top: var(--space-md);" onclick="resetQuiz()">
-        ðŸ”„ Take Quiz Again
+        🔄 Take Quiz Again
       </button>
       
       <div class="footer">
-        Made with ðŸ’š by <a href="https://dubltap.io">dubltap.io</a><br>
+        Made with 💚 by <a href="https://dubltap.io">dubltap.io</a><br>
         <small>Riffs Louder Than Hunger</small>
       </div>
     </div>
@@ -1233,8 +1233,8 @@
   <!-- Email Modal -->
   <div class="modal-overlay" id="emailModal">
     <div class="modal">
-      <button class="modal-close" onclick="closeModal('emailModal')">Ã—</button>
-      <div class="modal-icon">ðŸš€</div>
+      <button class="modal-close" onclick="closeModal('emailModal')">×</button>
+      <div class="modal-icon">🚀</div>
       <h2>Your Plan is Ready!</h2>
       <p class="subtitle">Enter your email to unlock your personalized side hustle plan</p>
       
@@ -1248,7 +1248,7 @@
       
       <input type="email" class="modal-input" id="emailInput" placeholder="your@email.com">
       <button class="btn btn-primary" style="width: 100%" onclick="submitEmail()">
-        Get My Free Plan â†’
+        Get My Free Plan →
       </button>
       
       <p class="modal-terms">
@@ -1261,8 +1261,8 @@
   <!-- Upgrade Modal -->
   <div class="modal-overlay" id="upgradeModal">
     <div class="modal">
-      <button class="modal-close" onclick="closeModal('upgradeModal')">Ã—</button>
-      <div class="modal-icon">ðŸ‘‘</div>
+      <button class="modal-close" onclick="closeModal('upgradeModal')">×</button>
+      <div class="modal-icon">👑</div>
       <h2>Unlock Pro Features</h2>
       <p class="subtitle">Everything you need to hit $1K/month</p>
       
@@ -1277,7 +1277,7 @@
       </div>
       
       <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-sm);" onclick="subscribePro()">
-        Start 7-Day Free Trial â€” $4.99/mo
+        Start 7-Day Free Trial — $4.99/mo
       </button>
       <button class="btn btn-secondary" style="width: 100%" onclick="closeModal('upgradeModal')">
         Maybe Later
@@ -1289,33 +1289,36 @@
   
   <!-- Toast -->
   <div class="toast" id="toast">
-    <span id="toastIcon">âœ“</span>
+    <span id="toastIcon">✓</span>
     <span id="toastText">Copied!</span>
   </div>
 
 <script>
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ═══════════════════════════════════════════════════════════════
 // SIDE HUSTLE COPILOT - MAIN APPLICATION
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ═══════════════════════════════════════════════════════════════
 
 const PHI = 1.618033988749895;
 
 // API Configuration
-const API_BASE = window.location.hostname === 'localhost'
-  ? 'http://localhost:3001/api'
-  : 'https://api.sidehustle.dubltap.io/api';
+const API_BASE = 'https://api.dubltap.io';
+const APP_NAME = 'side-hustle-copilot';
 
-// â•â• QUIZ DATA â•â•
+// Stripe Price IDs - UPDATE THESE WITH YOUR REAL IDs FROM STRIPE DASHBOARD
+const STRIPE_PRICE_MONTHLY = 'price_REPLACE_WITH_MONTHLY_ID';  // $12/mo
+const STRIPE_PRICE_ANNUAL = 'price_REPLACE_WITH_ANNUAL_ID';    // $99/yr
+
+// ══ QUIZ DATA ══
 const QUESTIONS = [
   {
     id: 'time',
     question: "How much time can you dedicate per week?",
     type: 'options',
     options: [
-      { value: '5', icon: 'â°', label: '5 hours or less', desc: 'Micro side hustle' },
-      { value: '10', icon: 'ðŸ“…', label: '5-10 hours', desc: 'Part-time hustle' },
-      { value: '20', icon: 'ðŸ”¥', label: '10-20 hours', desc: 'Serious side income' },
-      { value: '30', icon: 'ðŸš€', label: '20+ hours', desc: 'Building a business' }
+      { value: '5', icon: '⏰', label: '5 hours or less', desc: 'Micro side hustle' },
+      { value: '10', icon: '📅', label: '5-10 hours', desc: 'Part-time hustle' },
+      { value: '20', icon: '🔥', label: '10-20 hours', desc: 'Serious side income' },
+      { value: '30', icon: '🚀', label: '20+ hours', desc: 'Building a business' }
     ]
   },
   {
@@ -1323,10 +1326,10 @@ const QUESTIONS = [
     question: "What's your strongest skill set?",
     type: 'options',
     options: [
-      { value: 'creative', icon: 'ðŸŽ¨', label: 'Creative & Design', desc: 'Writing, design, video, art' },
-      { value: 'technical', icon: 'ðŸ’»', label: 'Technical & Digital', desc: 'Coding, data, automation' },
-      { value: 'people', icon: 'ðŸ¤', label: 'People & Communication', desc: 'Sales, teaching, coaching' },
-      { value: 'hands-on', icon: 'ðŸ”§', label: 'Hands-on & Physical', desc: 'Building, fixing, making' }
+      { value: 'creative', icon: '🎨', label: 'Creative & Design', desc: 'Writing, design, video, art' },
+      { value: 'technical', icon: '💻', label: 'Technical & Digital', desc: 'Coding, data, automation' },
+      { value: 'people', icon: '🤝', label: 'People & Communication', desc: 'Sales, teaching, coaching' },
+      { value: 'hands-on', icon: '🔧', label: 'Hands-on & Physical', desc: 'Building, fixing, making' }
     ]
   },
   {
@@ -1334,10 +1337,10 @@ const QUESTIONS = [
     question: "How much can you invest upfront?",
     type: 'options',
     options: [
-      { value: '0', icon: 'ðŸ†“', label: '$0 - Zero budget', desc: 'Start with what I have' },
-      { value: '100', icon: 'ðŸ’µ', label: 'Under $100', desc: 'Minimal investment' },
-      { value: '500', icon: 'ðŸ’°', label: '$100 - $500', desc: 'Some tools/courses' },
-      { value: '1000', icon: 'ðŸ’Ž', label: '$500+', desc: 'Ready to invest' }
+      { value: '0', icon: '🆓', label: '$0 - Zero budget', desc: 'Start with what I have' },
+      { value: '100', icon: '💵', label: 'Under $100', desc: 'Minimal investment' },
+      { value: '500', icon: '💰', label: '$100 - $500', desc: 'Some tools/courses' },
+      { value: '1000', icon: '💎', label: '$500+', desc: 'Ready to invest' }
     ]
   },
   {
@@ -1345,10 +1348,10 @@ const QUESTIONS = [
     question: "What's your preferred work style?",
     type: 'options',
     options: [
-      { value: 'async', icon: 'ðŸ ', label: 'Work alone, anytime', desc: 'Flexible, independent' },
-      { value: 'client', icon: 'ðŸ‘¥', label: 'Work with clients', desc: 'Service-based' },
-      { value: 'passive', icon: 'ðŸ˜´', label: 'Build once, earn forever', desc: 'Passive income' },
-      { value: 'active', icon: 'âš¡', label: 'Active trading/gigs', desc: 'Quick money' }
+      { value: 'async', icon: '🏠', label: 'Work alone, anytime', desc: 'Flexible, independent' },
+      { value: 'client', icon: '👥', label: 'Work with clients', desc: 'Service-based' },
+      { value: 'passive', icon: '😴', label: 'Build once, earn forever', desc: 'Passive income' },
+      { value: 'active', icon: '⚡', label: 'Active trading/gigs', desc: 'Quick money' }
     ]
   },
   {
@@ -1361,12 +1364,12 @@ const QUESTIONS = [
   }
 ];
 
-// â•â• SIDE HUSTLES DATABASE â•â•
+// ══ SIDE HUSTLES DATABASE ══
 const HUSTLES = [
   {
     id: 'freelance-writing',
     name: 'Freelance Writing',
-    icon: 'âœï¸',
+    icon: '✍️',
     category: 'creative',
     subtitle: 'Write articles, blogs, and copy for businesses',
     income: { min: 500, max: 5000 },
@@ -1384,7 +1387,7 @@ const HUSTLES = [
   {
     id: 'ai-automation',
     name: 'AI Automation Services',
-    icon: 'ðŸ¤–',
+    icon: '🤖',
     category: 'technical',
     subtitle: 'Help businesses automate with AI tools',
     income: { min: 1000, max: 10000 },
@@ -1402,7 +1405,7 @@ const HUSTLES = [
   {
     id: 'social-media',
     name: 'Social Media Management',
-    icon: 'ðŸ“±',
+    icon: '📱',
     category: 'creative',
     subtitle: 'Manage social accounts for small businesses',
     income: { min: 500, max: 3000 },
@@ -1420,7 +1423,7 @@ const HUSTLES = [
   {
     id: 'online-tutoring',
     name: 'Online Tutoring',
-    icon: 'ðŸ“š',
+    icon: '📚',
     category: 'people',
     subtitle: 'Teach students in subjects you know',
     income: { min: 300, max: 2000 },
@@ -1438,7 +1441,7 @@ const HUSTLES = [
   {
     id: 'dropshipping',
     name: 'Dropshipping Store',
-    icon: 'ðŸ“¦',
+    icon: '📦',
     category: 'technical',
     subtitle: 'Sell products without holding inventory',
     income: { min: 500, max: 10000 },
@@ -1456,7 +1459,7 @@ const HUSTLES = [
   {
     id: 'handyman',
     name: 'Handyman Services',
-    icon: 'ðŸ”¨',
+    icon: '🔨',
     category: 'hands-on',
     subtitle: 'Fix things and do small jobs for neighbors',
     income: { min: 500, max: 4000 },
@@ -1474,7 +1477,7 @@ const HUSTLES = [
   {
     id: 'coaching',
     name: 'Online Coaching',
-    icon: 'ðŸŽ¯',
+    icon: '🎯',
     category: 'people',
     subtitle: 'Help others achieve their goals 1-on-1',
     income: { min: 1000, max: 8000 },
@@ -1492,7 +1495,7 @@ const HUSTLES = [
   {
     id: 'reselling',
     name: 'Reselling & Flipping',
-    icon: 'ðŸ·ï¸',
+    icon: '🏷️',
     category: 'hands-on',
     subtitle: 'Buy low, sell high on eBay/Poshmark',
     income: { min: 300, max: 3000 },
@@ -1510,7 +1513,7 @@ const HUSTLES = [
   {
     id: 'youtube',
     name: 'YouTube Channel',
-    icon: 'ðŸŽ¬',
+    icon: '🎬',
     category: 'creative',
     subtitle: 'Create videos and build an audience',
     income: { min: 0, max: 10000 },
@@ -1528,7 +1531,7 @@ const HUSTLES = [
   {
     id: 'pet-services',
     name: 'Pet Sitting & Walking',
-    icon: 'ðŸ•',
+    icon: '🐕',
     category: 'hands-on',
     subtitle: 'Care for pets while owners are away',
     income: { min: 200, max: 2000 },
@@ -1545,7 +1548,7 @@ const HUSTLES = [
   }
 ];
 
-// â•â• STATE â•â•
+// ══ STATE ══
 let state = {
   currentQuestion: 0,
   answers: {},
@@ -1563,10 +1566,10 @@ function generateVisitorId() {
   return id;
 }
 
-// â•â• DOM HELPERS â•â•
+// ══ DOM HELPERS ══
 const $ = id => document.getElementById(id);
 
-// â•â• INITIALIZATION â•â•
+// ══ INITIALIZATION ══
 function init() {
   renderQuestion();
   updateLiveCount();
@@ -1601,17 +1604,17 @@ function updateReferralUI() {
     const dot = $(`ref${i}`);
     if (dot && state.referralCount >= i) {
       dot.classList.add('filled');
-      dot.textContent = 'âœ“';
+      dot.textContent = '✓';
     }
   }
   
   const refLink = $('referralLink');
   if (refLink) {
-    refLink.value = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+    refLink.value = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   }
 }
 
-// â•â• QUIZ RENDERING â•â•
+// ══ QUIZ RENDERING ══
 function renderQuestion() {
   const q = QUESTIONS[state.currentQuestion];
   
@@ -1658,7 +1661,7 @@ function renderQuestion() {
   $('backBtn').classList.toggle('hidden', state.currentQuestion === 0);
   
   // Next button text
-  $('nextBtn').textContent = state.currentQuestion === QUESTIONS.length - 1 ? 'Get My Plan â†’' : 'Continue â†’';
+  $('nextBtn').textContent = state.currentQuestion === QUESTIONS.length - 1 ? 'Get My Plan →' : 'Continue →';
 }
 
 function selectOption(value) {
@@ -1730,7 +1733,7 @@ function prevQuestion() {
   }
 }
 
-// â•â• RESULTS GENERATION â•â•
+// ══ RESULTS GENERATION ══
 async function generateResults() {
   showStage('loadingStage');
   
@@ -1749,22 +1752,38 @@ async function generateResults() {
   const matches = calculateMatches();
   state.result = matches;
   
-  // Try to get AI-enhanced plan
+  // Try to get AI-enhanced plan using secure API
   try {
-    const response = await fetch(`${API_BASE}/generate-plan`, {
+    const response = await fetch(`${API_BASE}/api/ai-query`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        answers: state.answers,
-        topHustle: matches[0].id,
-        visitorId: state.visitorId
+        app: APP_NAME,
+        action: 'generate-plan',
+        data: {
+          skills: state.answers.skills,
+          time: state.answers.time,
+          investment: state.answers.investment,
+          goal: state.answers.goal || 1000,
+          hustle: matches[0].id
+        },
+        email: state.email || localStorage.getItem('userEmail')
       })
     });
     
     if (response.ok) {
-      const aiPlan = await response.json();
-      if (aiPlan.steps) {
-        matches[0].steps = aiPlan.steps;
+      const aiResponse = await response.json();
+      if (aiResponse.success && aiResponse.result) {
+        try {
+          const aiPlan = typeof aiResponse.result === 'string' 
+            ? JSON.parse(aiResponse.result) 
+            : aiResponse.result;
+          if (aiPlan.steps) {
+            matches[0].steps = aiPlan.steps;
+          }
+        } catch (parseErr) {
+          console.log('AI plan parse error, using defaults');
+        }
       }
     }
   } catch {}
@@ -1889,22 +1908,22 @@ function renderResults(matches) {
   `).join('');
 }
 
-// â•â• SHARING â•â•
+// ══ SHARING ══
 function shareTwitter() {
   const hustle = state.result[0];
-  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free ðŸ‘‡\nhttps://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free 👇\nhttps://hustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
   markAsShared();
 }
 
 function shareLinkedIn() {
-  const url = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const url = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
   markAsShared();
 }
 
 function copyShareLink() {
-  const link = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const link = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   navigator.clipboard?.writeText(link);
   showToast('Link copied!');
   markAsShared();
@@ -1914,7 +1933,7 @@ function markAsShared() {
   state.hasShared = true;
   localStorage.setItem('hasShared', 'true');
   $('shareCard').innerHTML = `
-    <h3>âœ… Premium Features Unlocked!</h3>
+    <h3>✅ Premium Features Unlocked!</h3>
     <p>Thanks for sharing! You now have access to detailed playbooks.</p>
   `;
   trackEvent('share');
@@ -1925,7 +1944,7 @@ function copyReferralLink() {
   showToast('Referral link copied!');
 }
 
-// â•â• EMAIL & SUBSCRIPTIONS â•â•
+// ══ EMAIL & SUBSCRIPTIONS ══
 async function submitEmail() {
   const email = $('emailInput').value.trim();
   if (!email || !email.includes('@')) {
@@ -1937,35 +1956,60 @@ async function submitEmail() {
   localStorage.setItem('userEmail', email);
   
   try {
-    await fetch(`${API_BASE}/subscribe`, {
+    await fetch(`${API_BASE}/api/email-capture`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email,
-        visitorId: state.visitorId,
-        source: 'quiz_complete',
-        hustle: state.result?.[0]?.id,
-        referredBy: localStorage.getItem('referredBy')
+        name: '',
+        source: APP_NAME,
+        tags: ['side-hustle', 'quiz-complete']
       })
     });
   } catch {}
   
   closeModal('emailModal');
-  showToast('Welcome! Your plan is ready ðŸš€');
+  showToast('Welcome! Your plan is ready 🚀');
   trackEvent('email_signup');
 }
 
-function subscribePro() {
+function subscribePro(plan = 'monthly') {
   trackEvent('upgrade_click');
-  // Would integrate with Stripe
+  
+  const priceId = plan === 'annual' ? STRIPE_PRICE_ANNUAL : STRIPE_PRICE_MONTHLY;
+  const email = state.email || localStorage.getItem('userEmail') || '';
+  
   showToast('Opening checkout...');
+  
+  fetch(`${API_BASE}/api/create-checkout`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      priceId,
+      email,
+      appName: APP_NAME,
+      successUrl: `${window.location.origin}?success=true`,
+      cancelUrl: `${window.location.origin}?canceled=true`
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      showToast('Checkout error. Please try again.');
+    }
+  })
+  .catch(() => {
+    showToast('Connection error. Please try again.');
+  });
 }
 
 function showUpgradeModal() {
   showModal('upgradeModal');
 }
 
-// â•â• UTILITIES â•â•
+// ══ UTILITIES ══
 function showStage(stageId) {
   document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
   $(stageId).classList.add('active');
@@ -2005,7 +2049,7 @@ function trackEvent(event, data = {}) {
   }).catch(() => {});
 }
 
-// â•â• START â•â•
+// ══ START ══
 document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
