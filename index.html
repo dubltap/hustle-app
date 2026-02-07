@@ -7,7 +7,7 @@
   <meta name="description" content="AI-powered side hustle finder. Discover your perfect income stream based on your skills, time, and goals. Free personalized action plan in 60 seconds.">
   <meta property="og:title" content="Side Hustle Copilot - Find Your $1K/Month Side Income">
   <meta property="og:description" content="I just found my perfect side hustle! Take the free 60-second quiz.">
-  <meta property="og:image" content="https://hustle.dubltap.io/og-image.png">
+  <meta property="og:image" content="https://sidehustle.dubltap.io/og-image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1064,7 +1064,7 @@
 <body class="has-announcement">
   <!-- Announcement Bar -->
   <div class="announcement-bar" onclick="showUpgradeModal()">
-    🔥 <span id="liveCount">2,847</span> people found their side hustle today — <strong>Get your free plan →</strong>
+    🔥 Find your perfect side hustle in 60 seconds — <strong>Get your free plan →</strong>
   </div>
   
   <!-- Background Effects -->
@@ -1098,7 +1098,7 @@
           <span><span class="proof-number" id="totalUsers">47,293</span> plans created</span>
         </div>
         <div class="proof-item">
-          💰 <span class="proof-number">$2.4M</span> earned by users
+          💰 Personalized action plan included
         </div>
       </div>
     </header>
@@ -1214,7 +1214,7 @@
           <div class="cta-feature">Community access</div>
         </div>
         <button class="btn btn-primary" style="width: 100%" onclick="showUpgradeModal()">
-          Unlock Full Playbook — $12.00/mo
+          Unlock Full Playbook — $4.99/mo
         </button>
       </div>
       
@@ -1223,9 +1223,13 @@
         🔄 Take Quiz Again
       </button>
       
-      <div class="footer">
-        Made with 💚 by <a href="https://dubltap.io">dubltap.io</a><br>
-        <small>Riffs Louder Than Hunger</small>
+            <div class="footer" style="text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div style="margin-bottom: 0.75rem;">
+          <a href="https://dubltap.io/privacy" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; margin: 0 0.75rem; font-size: 0.875rem;">Privacy Policy</a>
+          <span style="opacity: 0.3; color: var(--text-muted);">|</span>
+          <a href="https://dubltap.io/terms" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; margin: 0 0.75rem; font-size: 0.875rem;">Terms of Service</a>
+        </div>
+        <small style="opacity: 0.5;">© 2026 dubltap.io LLC - ALL RIGHTS RESERVED - dubltap F1</small>
       </div>
     </div>
   </div>
@@ -1252,7 +1256,7 @@
       </button>
       
       <p class="modal-terms">
-        By continuing, you agree to our <a href="#">Terms</a> & <a href="#">Privacy</a>.<br>
+        By continuing, you agree to our <a href="https://dubltap.io/terms" target="_blank" rel="noopener" style="color: inherit;">Terms</a> & <a href="https://dubltap.io/privacy" target="_blank" rel="noopener" style="color: inherit;">Privacy Policy</a>.<br>
         Unsubscribe anytime. No spam, ever.
       </p>
     </div>
@@ -1277,7 +1281,7 @@
       </div>
       
       <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-sm);" onclick="subscribePro()">
-        Start 7-Day Free Trial — $12.00/mo
+        Start 7-Day Free Trial — $4.99/mo
       </button>
       <button class="btn btn-secondary" style="width: 100%" onclick="closeModal('upgradeModal')">
         Maybe Later
@@ -1301,12 +1305,9 @@
 const PHI = 1.618033988749895;
 
 // API Configuration
-const API_BASE = 'https://api.dubltap.io';
-const APP_NAME = 'side-hustle-copilot';
-
-// Stripe Price IDs - UPDATE THESE WITH YOUR REAL IDs FROM STRIPE DASHBOARD
-const STRIPE_PRICE_MONTHLY = 'price_1SrqxfBkYqg7J4R7bAkPvQbS';  // $12/mo
-const STRIPE_PRICE_ANNUAL = 'price_1Srr2NBkYqg7J4R7zlMHvzTR';    // $99/yr
+const API_BASE = window.location.hostname === 'localhost'
+  ? 'http://localhost:3001/api'
+  : 'https://api.sidehustle.dubltap.io/api';
 
 // ══ QUIZ DATA ══
 const QUESTIONS = [
@@ -1351,7 +1352,7 @@ const QUESTIONS = [
       { value: 'async', icon: '🏠', label: 'Work alone, anytime', desc: 'Flexible, independent' },
       { value: 'client', icon: '👥', label: 'Work with clients', desc: 'Service-based' },
       { value: 'passive', icon: '😴', label: 'Build once, earn forever', desc: 'Passive income' },
-      { value: 'active', icon: '⚡', label: 'Active trading/gigs', desc: 'Quick money' }
+      { value: 'active', icon: 'âš¡', label: 'Active trading/gigs', desc: 'Quick money' }
     ]
   },
   {
@@ -1582,9 +1583,8 @@ function init() {
 
 function updateLiveCount() {
   // Simulate real-time activity
-  const base = 2847;
-  const variation = Math.floor(Math.random() * 50);
-  $('liveCount').textContent = (base + variation).toLocaleString();
+  // Removed fake counter
+  // Social proof display
   
   // Update total users
   const total = 47293 + Math.floor((Date.now() - new Date('2025-01-01').getTime()) / (1000 * 60 * 60) * PHI);
@@ -1610,7 +1610,7 @@ function updateReferralUI() {
   
   const refLink = $('referralLink');
   if (refLink) {
-    refLink.value = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
+    refLink.value = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
   }
 }
 
@@ -1752,38 +1752,22 @@ async function generateResults() {
   const matches = calculateMatches();
   state.result = matches;
   
-  // Try to get AI-enhanced plan using secure API
+  // Try to get AI-enhanced plan
   try {
-    const response = await fetch(`${API_BASE}/api/ai-query`, {
+    const response = await fetch(`${API_BASE}/generate-plan`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        app: APP_NAME,
-        action: 'generate-plan',
-        data: {
-          skills: state.answers.skills,
-          time: state.answers.time,
-          investment: state.answers.investment,
-          goal: state.answers.goal || 1000,
-          hustle: matches[0].id
-        },
-        email: state.email || localStorage.getItem('userEmail')
+        answers: state.answers,
+        topHustle: matches[0].id,
+        visitorId: state.visitorId
       })
     });
     
     if (response.ok) {
-      const aiResponse = await response.json();
-      if (aiResponse.success && aiResponse.result) {
-        try {
-          const aiPlan = typeof aiResponse.result === 'string' 
-            ? JSON.parse(aiResponse.result) 
-            : aiResponse.result;
-          if (aiPlan.steps) {
-            matches[0].steps = aiPlan.steps;
-          }
-        } catch (parseErr) {
-          console.log('AI plan parse error, using defaults');
-        }
+      const aiPlan = await response.json();
+      if (aiPlan.steps) {
+        matches[0].steps = aiPlan.steps;
       }
     }
   } catch {}
@@ -1911,19 +1895,19 @@ function renderResults(matches) {
 // ══ SHARING ══
 function shareTwitter() {
   const hustle = state.result[0];
-  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free 👇\nhttps://hustle.dubltap.io/?ref=${state.visitorId}`;
+  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free 👇\nhttps://sidehustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
   markAsShared();
 }
 
 function shareLinkedIn() {
-  const url = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
+  const url = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
   markAsShared();
 }
 
 function copyShareLink() {
-  const link = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
+  const link = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
   navigator.clipboard?.writeText(link);
   showToast('Link copied!');
   markAsShared();
@@ -1956,14 +1940,15 @@ async function submitEmail() {
   localStorage.setItem('userEmail', email);
   
   try {
-    await fetch(`${API_BASE}/api/email-capture`, {
+    await fetch(`${API_BASE}/subscribe`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email,
-        name: '',
-        source: APP_NAME,
-        tags: ['side-hustle', 'quiz-complete']
+        visitorId: state.visitorId,
+        source: 'quiz_complete',
+        hustle: state.result?.[0]?.id,
+        referredBy: localStorage.getItem('referredBy')
       })
     });
   } catch {}
@@ -1973,36 +1958,10 @@ async function submitEmail() {
   trackEvent('email_signup');
 }
 
-function subscribePro(plan = 'monthly') {
+function subscribePro() {
   trackEvent('upgrade_click');
-  
-  const priceId = plan === 'annual' ? STRIPE_PRICE_ANNUAL : STRIPE_PRICE_MONTHLY;
-  const email = state.email || localStorage.getItem('userEmail') || '';
-  
+  // Would integrate with Stripe
   showToast('Opening checkout...');
-  
-  fetch(`${API_BASE}/api/create-checkout`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      priceId,
-      email,
-      appName: APP_NAME,
-      successUrl: `${window.location.origin}?success=true`,
-      cancelUrl: `${window.location.origin}?canceled=true`
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      showToast('Checkout error. Please try again.');
-    }
-  })
-  .catch(() => {
-    showToast('Connection error. Please try again.');
-  });
 }
 
 function showUpgradeModal() {
