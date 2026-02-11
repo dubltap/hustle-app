@@ -1214,7 +1214,7 @@
           <div class="cta-feature">Community access</div>
         </div>
         <button class="btn btn-primary" style="width: 100%" onclick="showUpgradeModal()">
-          Unlock Full Playbook — $4.99/mo
+          Unlock Full Playbook — $12/mo
         </button>
       </div>
       
@@ -1281,8 +1281,11 @@
       </div>
       
       <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-sm);" onclick="subscribePro()">
-        Start 7-Day Free Trial — $4.99/mo
+        Start 7-Day Free Trial — $12/mo
       </button>
+              <button class="btn btn-secondary" style="width: 100%; margin-bottom: var(--space-sm); background: linear-gradient(135deg, #1a472a, #2d5a3f); border: 1px solid rgba(46, 204, 113, 0.3);" onclick="subscribeProAnnual()">
+                          Save 31% — $99/year
+              </button>button>
       <button class="btn btn-secondary" style="width: 100%" onclick="closeModal('upgradeModal')">
         Maybe Later
       </button>
@@ -1988,6 +1991,28 @@ async function subscribePro() {
   } catch {}
       closeModal('upgradeModal');
 }
+
+      async function subscribeProAnnual() {
+        trackEvent('upgrade_annual_click');
+        showToast('Opening checkout...');
+        try {
+                              const response = await fetch(`${API_BASE}/create-checkout`, {
+                method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                          email: state.email,
+                          visitorId: state.visitorId,
+                          plan: 'pro_annual'
+  })
+  });
+
+              if (response.ok) {
+                const data = await response.json();
+                if (data.url) { window.location.href = data.url; return; }
+              }
+        } catch {}
+              closeModal('upgradeModal');
+      }
 
 function showUpgradeModal() {
   showModal('upgradeModal');
