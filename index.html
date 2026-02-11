@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-widhth, initial-scale=1.0">
   <title>Side Hustle Copilot - Find Your $1K/Month Side Income</title>
-  <meta name="description" content="AI-powered side hustle finder. Discover your perfect income stream based on your skills, time, and goals. Free personalized action plan in 60 seconds.">
+  <meta name="description" contenhht="AI-powered side hustle finder. Discover your perfect income stream based on your skills, time, and goals. Free personalized action plan in 60 seconds.">
   <meta property="og:title" content="Side Hustle Copilot - Find Your $1K/Month Side Income">
   <meta property="og:description" content="I just found my perfect side hustle! Take the free 60-second quiz.">
-  <meta property="og:image" content="https://sidehustle.dubltap.io/og-image.png">
+  <meta property="og:image" content="https://hustle.dubltap.io/og-image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1013,7 +1013,7 @@
     
     .modal-terms {
       text-align: center;
-      font-size: var(--text-xs);
+      font-size: var(--text-xs);h
       color: var(--text-muted);
       margin-top: var(--space-md);
     }
@@ -1063,7 +1063,7 @@
 </head>
 <body class="has-announcement">
   <!-- Announcement Bar -->
-  <div class="announcement-bar" onclick="showUpgradeModal()">
+  <div class="announcement-bar" onclick="document.getElementById('quizStage').scrollIntoView({behavior:'smooth'})">
     🔥 Find your perfect side hustle in 60 seconds — <strong>Get your free plan →</strong>
   </div>
   
@@ -1307,7 +1307,7 @@ const PHI = 1.618033988749895;
 // API Configuration
 const API_BASE = window.location.hostname === 'localhost'
   ? 'http://localhost:3001/api'
-  : 'https://api.sidehustle.dubltap.io/api';
+  : 'https://api.hustle.dubltap.io/api';
 
 // ══ QUIZ DATA ══
 const QUESTIONS = [
@@ -1342,7 +1342,7 @@ const QUESTIONS = [
       { value: '100', icon: '💵', label: 'Under $100', desc: 'Minimal investment' },
       { value: '500', icon: '💰', label: '$100 - $500', desc: 'Some tools/courses' },
       { value: '1000', icon: '💎', label: '$500+', desc: 'Ready to invest' }
-    ]
+    ]h
   },
   {
     id: 'style',
@@ -1352,7 +1352,7 @@ const QUESTIONS = [
       { value: 'async', icon: '🏠', label: 'Work alone, anytime', desc: 'Flexible, independent' },
       { value: 'client', icon: '👥', label: 'Work with clients', desc: 'Service-based' },
       { value: 'passive', icon: '😴', label: 'Build once, earn forever', desc: 'Passive income' },
-      { value: 'active', icon: 'âš¡', label: 'Active trading/gigs', desc: 'Quick money' }
+      { value: 'active', icon: '⚡', label: 'Active trading/gigs', desc: 'Quick money' }
     ]
   },
   {
@@ -1610,7 +1610,7 @@ function updateReferralUI() {
   
   const refLink = $('referralLink');
   if (refLink) {
-    refLink.value = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+    refLink.value = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   }
 }
 
@@ -1637,6 +1637,7 @@ function renderQuestion() {
     $('sliderContainer').classList.remove('hidden');
     state.sliderValue = state.answers[q.id] || q.default;
     updateSliderUI();
+          state.answers[q.id] = state.sliderValue;
     $('nextBtn').disabled = false;
   } else {
     $('optionsGrid').classList.remove('hidden');
@@ -1743,7 +1744,7 @@ async function generateResults() {
     await sleep(618); // Golden timing
     $(steps[i]).classList.add('active');
     if (i > 0) $(steps[i-1]).classList.remove('active');
-    $(steps[i]).classList.add('completed');
+    $(steps[i]).classList.remove('active'); $(steps[i]).classList.add('completed');
   }
   
   await sleep(424);
@@ -1895,19 +1896,19 @@ function renderResults(matches) {
 // ══ SHARING ══
 function shareTwitter() {
   const hustle = state.result[0];
-  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free 👇\nhttps://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const text = `Just discovered my perfect side hustle: ${hustle.name} ${hustle.icon}\n\nPotential: $${hustle.income.min}-$${hustle.income.max}/month\n\nFind yours free 👇\nhttps://hustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
   markAsShared();
 }
 
 function shareLinkedIn() {
-  const url = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const url = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
   markAsShared();
 }
 
 function copyShareLink() {
-  const link = `https://sidehustle.dubltap.io/?ref=${state.visitorId}`;
+  const link = `https://hustle.dubltap.io/?ref=${state.visitorId}`;
   navigator.clipboard?.writeText(link);
   showToast('Link copied!');
   markAsShared();
@@ -1931,7 +1932,7 @@ function copyReferralLink() {
 // ══ EMAIL & SUBSCRIPTIONS ══
 async function submitEmail() {
   const email = $('emailInput').value.trim();
-  if (!email || !email.includes('@')) {
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     $('emailInput').style.borderColor = '#ef4444';
     return;
   }
@@ -1952,16 +1953,40 @@ async function submitEmail() {
       })
     });
   } catch {}
+
+      // Formspree fallback for email capture
+      try {
+        fetch('https://formspree.io/f/xqedegoa', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, hustle: state.result?.[0]?.id })
+  });
+  } catch {}
   
   closeModal('emailModal');
   showToast('Welcome! Your plan is ready 🚀');
   trackEvent('email_signup');
 }
 
-function subscribePro() {
+async function subscribePro() {
   trackEvent('upgrade_click');
-  // Would integrate with Stripe
-  showToast('Opening checkout...');
+      showToast('Opening checkout...');
+        try {
+                                               const response = await fetch(`${API_BASE}/create-checkout`, {
+              method: 'POST',
+                                                         headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                        email: state.email,
+                        visitorId: state.visitorId,
+                        plan: 'pro_monthly'
+  })
+  });
+        if (response.ok) {
+          const data = await response.json();
+          if (data.url) { window.location.href = data.url; return; }
+        }
+  } catch {}
+      closeModal('upgradeModal');
 }
 
 function showUpgradeModal() {
