@@ -1013,7 +1013,7 @@
     
     .modal-terms {
       text-align: center;
-      font-size: var(--text-xs);h
+      font-size: var(--text-xs);
       color: var(--text-muted);
       margin-top: var(--space-md);
     }
@@ -1058,6 +1058,46 @@
       text-decoration: none;
     }
     
+
+    /* ══ PRICING TOGGLE ══ */
+    .pricing-toggle {
+      display: flex;
+      background: var(--bg-elevated);
+      border-radius: var(--radius-full);
+      padding: 3px;
+      margin-bottom: var(--space-md);
+    }
+
+    .toggle-option {
+      flex: 1;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--radius-full);
+      border: none;
+      font-family: inherit;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--duration-base) var(--ease-golden);
+      color: var(--text-muted);
+      background: transparent;
+      text-align: center;
+    }
+
+    .toggle-option.active {
+      background: var(--gradient-money);
+      color: #000;
+    }
+
+    .toggle-save {
+      font-size: var(--text-xs);
+      color: var(--gold-400);
+      font-weight: 700;
+    }
+
+    .toggle-option.active .toggle-save {
+      color: #78350f;
+    }
+
     .hidden { display: none !important; }
   </style>
 </head>
@@ -1213,7 +1253,11 @@
           <div class="cta-feature">Weekly coaching</div>
           <div class="cta-feature">Community access</div>
         </div>
-        <button class="btn btn-primary" style="width: 100%" onclick="showUpgradeModal()">
+        <div class="pricing-toggle" id="ctaToggle">
+          <button class="toggle-option active" onclick="setPlan('monthly')">Monthly</button>
+          <button class="toggle-option" onclick="setPlan('annual')">Annual <span class="toggle-save">Save 31%</span></button>
+        </div>
+        <button class="btn btn-primary" style="width: 100%" id="ctaUpgradeBtn" onclick="showUpgradeModal()">
           Unlock Full Playbook — $12/mo
         </button>
       </div>
@@ -1280,12 +1324,13 @@
         </ul>
       </div>
       
-      <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-sm);" onclick="subscribePro()">
+      <div class="pricing-toggle" id="modalToggle">
+        <button class="toggle-option active" onclick="setPlan('monthly')">Monthly</button>
+        <button class="toggle-option" onclick="setPlan('annual')">Annual <span class="toggle-save">Save 31%</span></button>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-sm);" id="modalUpgradeBtn" onclick="subscribePro()">
         Start 7-Day Free Trial — $12/mo
       </button>
-              <button class="btn btn-secondary" style="width: 100%; margin-bottom: var(--space-sm); background: linear-gradient(135deg, #1a472a, #2d5a3f); border: 1px solid rgba(46, 204, 113, 0.3);" onclick="subscribeProAnnual()">
-                          Save 31% — $99/year
-              </button>button>
       <button class="btn btn-secondary" style="width: 100%" onclick="closeModal('upgradeModal')">
         Maybe Later
       </button>
@@ -1971,25 +2016,48 @@ async function submitEmail() {
   trackEvent('email_signup');
 }
 
+// Pricing state
+let selectedPlan = 'monthly';
+
+function setPlan(plan) {
+  selectedPlan = plan;
+  document.querySelectorAll('.pricing-toggle').forEach(function(toggle) {
+    var btns = toggle.querySelectorAll('.toggle-option');
+    btns[0].classList.toggle('active', plan === 'monthly');
+    btns[1].classList.toggle('active', plan === 'annual');
+  });
+  var ctaBtn = document.getElementById('ctaUpgradeBtn');
+  var modalBtn = document.getElementById('modalUpgradeBtn');
+  if (plan === 'annual') {
+    if (ctaBtn) ctaBtn.textContent = 'Unlock Full Playbook \u2014 $99/year';
+    if (modalBtn) modalBtn.textContent = 'Start 7-Day Free Trial \u2014 $99/year';
+  } else {
+    if (ctaBtn) ctaBtn.textContent = 'Unlock Full Playbook \u2014 $12/mo';
+    if (modalBtn) modalBtn.textContent = 'Start 7-Day Free Trial \u2014 $12/mo';
+  }
+}
+
 async function subscribePro() {
   trackEvent('upgrade_click');
-      showToast('Opening checkout...');
-        try {
-                                               const response = await fetch(`${API_BASE}/create-checkout`, {
-              method: 'POST',
-                                                         headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                        email: state.email,
-                        visitorId: state.visitorId,
-                        priceId: 'price_1SrqxfBkYqg7J4R7bAkPvQbS'
-  })
-  });
-        if (response.ok) {
-          const data = await response.json();
-          if (data.url) { window.location.href = data.url; return; }
-        }
-  } catch {}
-      closeModal('upgradeModal');
+  showToast('Opening checkout...');
+  var priceId = selectedPlan === 'annual' ? 'price_1Srr2NBkYqg7J4R7zlMHvzTR' : 'pro_monthly';
+  try {
+    var response = await fetch(API_BASE + '/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: state.email,
+        visitorId: state.visitorId,
+        plan: selectedPlan,
+        priceId: priceId
+      })
+    });
+    if (response.ok) {
+      var data = await response.json();
+      if (data.url) { window.location.href = data.url; return; }
+    }
+  } catch (e) {}
+  closeModal('upgradeModal');
 }
 
       async function subscribeProAnnual() {
