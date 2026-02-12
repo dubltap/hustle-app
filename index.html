@@ -2040,7 +2040,7 @@ function setPlan(plan) {
 async function subscribePro() {
   trackEvent('upgrade_click');
   showToast('Opening checkout...');
-  var priceId = selectedPlan === 'annual' ? 'price_1Srr2NBkYqg7J4R7zlMHvzTR' : 'price_1SrqxfBkYqg7J4R7bAkPvQbS';
+  var priceId = selectedPlan === 'annual' ? 'price_1SzlXXBkYqg7J4R79sLqZR8W' : 'price_1SrqxfBkYqg7J4R7bAkPvQbS';
   try {
     var response = await fetch(API_BASE + '/create-checkout', {
       method: 'POST',
