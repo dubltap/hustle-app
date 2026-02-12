@@ -1355,7 +1355,7 @@ const PHI = 1.618033988749895;
 // API Configuration
 const API_BASE = window.location.hostname === 'localhost'
   ? 'http://localhost:3001/api'
-  : 'https://api.hustle.dubltap.io/api';
+  : 'https://api.dubltap.io/api';
 
 // ══ QUIZ DATA ══
 const QUESTIONS = [
@@ -2040,7 +2040,7 @@ function setPlan(plan) {
 async function subscribePro() {
   trackEvent('upgrade_click');
   showToast('Opening checkout...');
-  var priceId = selectedPlan === 'annual' ? 'price_1Srr2NBkYqg7J4R7zlMHvzTR' : 'pro_monthly';
+  var priceId = selectedPlan === 'annual' ? 'price_1Srr2NBkYqg7J4R7zlMHvzTR' : 'price_1SrqxfBkYqg7J4R7bAkPvQbS';
   try {
     var response = await fetch(API_BASE + '/create-checkout', {
       method: 'POST',
@@ -2118,7 +2118,7 @@ function resetQuiz() {
   renderQuestion();
 }
 
-function trackEvent(event, data = {}) {
+function trackEvent(event, data = {}) {x
   fetch(`${API_BASE}/track`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
