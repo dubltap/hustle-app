@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+h<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <meta name="description" content="AI-powered side hustle finder. Discover your perfect income stream based on your skills, time, and goals. Free personalized action plan in 60 seconds.">
   <meta property="og:title" content="Side Hustle Copilot - Find Your $1K/Month Side Income">
   <meta property="og:description" content="I just found my perfect side hustle! Take the free 60-second quiz.">
-  <meta property="og:image" content="https://hustle.dubltap.io/og-image.png">
+  <meta property="og:image" content="https://hustle.dubltap.ioh/og-image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1989,7 +1989,7 @@ async function submitEmail() {
   localStorage.setItem('userEmail', email);
   
   try {
-    await fetch(`${API_BASE}/subscribe`, {
+    await fetch(`${API_BASE}/api/email-capture`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
