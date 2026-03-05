@@ -1283,7 +1283,6 @@
   <!-- Email Modal -->
   <div class="modal-overlay" id="emailModal">
     <div class="modal">
-      <button class="modal-close" onclick="closeModal('emailModal')">×</button>
       <div class="modal-icon">🚀</div>
       <h2>Your Plan is Ready!</h2>
       <p class="subtitle">Enter your email to get your personalized side hustle plan</p>
@@ -1823,13 +1822,15 @@ async function generateResults() {
     }
   } catch {}
   
-  // Show email modal if not captured
-  if (!state.email) {
-    showModal('emailModal');
-  }
-  
-  renderResults(matches);
-  showStage('resultsStage');
+  // Email gate — must provide email before seeing results
+    if (!state.email) {
+        state.pendingMatches = matches;
+            showModal('emailModal');
+                return;
+                  }
+
+                    renderResults(matches);
+                      showStage('resultsStage');
 }
 
 function calculateMatches() {
@@ -2016,6 +2017,16 @@ async function submitEmail() {
   closeModal('emailModal');
   showToast('Welcome! Your plan is ready 🚀');
   trackEvent('email_signup');
+
+    // Fire Reddit conversion pixel on email capture
+      if (typeof rdt === 'function') rdt('track', 'Lead');
+
+        // Render pending results after email capture
+          if (state.pendingMatches) {
+              renderResults(state.pendingMatches);
+                  showStage('resultsStage');
+                      state.pendingMatches = null;
+                        }
 }
 
 // Pricing state
